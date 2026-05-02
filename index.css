@@ -939,3 +939,26 @@ body::before {
     .filter-btn:hover, .filter-btn.active { background: #8d4d3a; color: #fff9f4; border-color: #8d4d3a; }
     @media (max-width: 980px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 600px) { .products-grid { grid-template-columns: 1fr; } }
+    .pcard-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    display: block;
+    }
+    .pcard-img-wrap {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  height: 200px; /* ADD THIS */
+}
+
+.pcard-img {
+  width: 100%;
+  height: 100%; /* CHANGE from 200px to 100% */
+  object-fit: cover;
+  object-position: center; /* ADD THIS — keeps the best part of image centered */
+  border-radius: 0; /* CHANGE to 0, let the wrapper handle rounding */
+  display: block;
+  margin: 0;
+}
