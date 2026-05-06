@@ -962,3 +962,169 @@ body::before {
   display: block;
   margin: 0;
 }
+/* ── Catalogue Cards with Photos ── */
+.cat-card {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 24px;
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+.cat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 56px rgba(78, 51, 35, 0.18);
+}
+.cat-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.cat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 400ms ease;
+}
+.cat-card:hover .cat-img {
+  transform: scale(1.06);
+}
+.cat-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(90,50,40,0.18) 0%, rgba(46,36,29,0.45) 100%);
+  transition: background 240ms ease;
+}
+.cat-card:hover .cat-img-overlay {
+  background: linear-gradient(160deg, rgba(90,50,40,0.08) 0%, rgba(46,36,29,0.30) 100%);
+}
+.cat-number {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  color: rgba(255,250,243,0.9);
+  text-transform: uppercase;
+  font-family: "Manrope", sans-serif;
+}
+.cat-body {
+  padding: 20px 22px 22px;
+}
+.cat-body h3 { margin: 0 0 8px; font-size: 1.15rem; }
+.cat-body p { margin: 0 0 14px; font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+.cat-cta {
+  font-size: 0.9rem;
+  color: var(--accent);
+  transition: color 200ms ease, letter-spacing 200ms ease;
+  display: inline-block;
+}
+.cat-card:hover .cat-cta { color: var(--accent-deep); letter-spacing: 0.04em; }
+
+/* ── Category Page Hero Banner ── */
+.cat-hero-banner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-radius: 28px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.cat-hero-banner img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.cat-hero-banner .banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(30,20,14,0.15) 0%, rgba(30,20,14,0.72) 100%);
+}
+.cat-hero-banner .banner-content {
+  position: relative;
+  z-index: 2;
+  padding: 28px 32px;
+  width: 100%;
+}
+.cat-hero-banner .banner-breadcrumb {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,250,243,0.65);
+  margin: 0 0 10px;
+  font-family: "Manrope", sans-serif;
+}
+.cat-hero-banner .banner-breadcrumb a { color: rgba(255,250,243,0.65); text-decoration: none; }
+.cat-hero-banner .banner-breadcrumb a:hover { color: rgba(255,250,243,0.9); }
+.cat-hero-banner h1 {
+  margin: 0 0 6px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  color: #fffaf5;
+  line-height: 1;
+  font-weight: 600;
+}
+.cat-hero-banner .banner-tagline {
+  margin: 0;
+  font-size: 0.92rem;
+  color: rgba(255,250,243,0.78);
+  font-family: "Manrope", sans-serif;
+}
+
+/* ── You May Also Like ── */
+.also-like-section {
+  margin-top: 24px;
+  padding: 32px;
+  border-radius: 30px;
+  background: rgba(255,252,247,0.78);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.also-like-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 22px;
+}
+.also-like-card {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+.also-like-card:hover { transform: translateY(-5px); box-shadow: 0 22px 44px rgba(78,51,35,0.15); }
+.also-like-img-wrap { position: relative; height: 150px; overflow: hidden; }
+.also-like-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
+  transition: transform 400ms ease;
+}
+.also-like-card:hover .also-like-img-wrap img { transform: scale(1.07); }
+.also-like-img-wrap .al-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, rgba(30,20,14,0.5) 100%);
+}
+.also-like-body { padding: 16px 18px 18px; flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.also-like-body .al-num { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+.also-like-body h3 { font-family: "Cormorant Garamond", serif; font-size: 1.3rem; font-weight: 600; color: var(--text); margin: 0; }
+.also-like-body p { font-size: 0.84rem; color: var(--muted); margin: 0; line-height: 1.6; flex: 1; }
+.also-like-body .al-cta { font-size: 0.85rem; font-weight: 700; color: var(--accent); margin-top: 8px; transition: letter-spacing 200ms ease, color 200ms ease; display: inline-block; }
+.also-like-card:hover .al-cta { letter-spacing: 0.04em; color: var(--accent-deep); }
+@media (max-width: 600px) {
+  .also-like-grid { grid-template-columns: 1fr; }
+  .cat-hero-banner { height: 220px; }
+  .cat-hero-banner .banner-content { padding: 20px; }
+}
